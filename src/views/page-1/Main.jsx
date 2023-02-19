@@ -114,6 +114,59 @@ function Main() {
                             </div>
                           </div>
                         </div>
+
+                        <div className="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
+                  <div className="form-label xl:w-64 xl:!mr-10">
+                    <div className="text-left">
+                      <div className="flex items-center">
+                        <div className="font-medium">Skip Logic</div>
+                      </div>
+                      <div className="leading-relaxed text-slate-500 text-xs mt-3">
+                        instructions
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-full mt-3 xl:mt-0 flex-1">
+                    <div className="flex flex-col sm:flex-row">
+                      <div className="form-check mr-4">
+                        <input
+                          id="shipping-service-standard"
+                          className="form-check-input"
+                          type="radio"
+                          name="horizontal_radio_button"
+                          value="horizontal-radio-chris-evans"
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="shipping-service-standard"
+                        >
+                          CanSkipNextQues
+                        </label>
+                      </div>
+                      <div className="form-check mr-4 mt-2 sm:mt-0">
+                        <input
+                          id="shipping-service-custom"
+                          className="form-check-input"
+                          type="radio"
+                          name="horizontal_radio_button"
+                          value="horizontal-radio-liam-neeson"
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="shipping-service-custom"
+                        >
+                          Skipable
+                        </label>
+                      </div>
+                    </div>
+                    <div className="leading-relaxed text-slate-500 text-xs mt-3">
+                     Choose canSkipNextQuestion for the parent and skipable for the child
+                      <a className="text-primary font-medium" href="">
+                       Docs
+                      </a>
+                    </div>
+                  </div>
+                </div>
                        
                         {/* <div className="xl:ml-20 xl:pl-5 xl:pr-20 mt-5 first:mt-0">
                           <button className="btn btn-outline-primary border-dashed w-full">
