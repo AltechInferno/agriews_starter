@@ -1,5 +1,5 @@
-import { Lucide } from "@/base-components";
 import { useState } from "react";
+import { Lucide } from "@/base-components";
 
 const Question = ({ question, updateQuestion }) => {
   const {
@@ -87,7 +87,7 @@ const Question = ({ question, updateQuestion }) => {
               </div>
 
               <div className="form-inline mt-5 first:mt-0">
-                <label className="form-label sm:w-20">Type</label>
+                <label clTookassName="form-label sm:w-20">Type</label>
                 <div className="flex items-center flex-1 xl:pr-20">
                   <div className="input-group flex-1">
                     <div className="w-full mt-3 xl:mt-0 flex-1">
