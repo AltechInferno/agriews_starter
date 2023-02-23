@@ -62,11 +62,7 @@ const Questionnaires = () => {
               handleTitleChange={handleTitleUpdate}
               placeholder="Group name"
             />
-            <Questions
-              position={i}
-              questions={questions}
-              updateQuestions={updateQuestions}
-            />
+            <Questions position={i} updateQuestions={updateQuestions} />
           </div>
         );
       })}
