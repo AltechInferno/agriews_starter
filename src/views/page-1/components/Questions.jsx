@@ -1,8 +1,12 @@
-import { useState } from "react";
-import { Question, AddQuestion, SubmitBtn } from "./";
+import { useState, useEffect } from "react";
+import { Question, AddQuestion } from "./";
 
-const Questions = () => {
+const Questions = ({ updateQuestions, position }) => {
   const [questions, setQuestions] = useState([]);
+
+  useEffect(() => {
+    updateQuestions(position, questions);
+  }, [questions]);
 
   const addQuestion = () => {
     const questionPosition = questions.length + 1;
@@ -16,6 +20,7 @@ const Questions = () => {
       description: "",
       choices: null,
       skipOn: null,
+      required: null,
     };
     setQuestions([...questions, newQuestion]);
   };
@@ -26,10 +31,7 @@ const Questions = () => {
   };
   const updateQuestion = (index, event) => {
     const data = [...questions];
-    if (
-      event.target.name === "canSkipNextQuestion" ||
-      event.target.name === "skipable"
-    ) {
+    if (event.target.type === "checkbox") {
       data[index][event.target.name] = event.target.checked;
     } else if (event.target.name === "choices") {
       console.log(123);
@@ -39,11 +41,6 @@ const Questions = () => {
     setQuestions(data);
   };
 
-  const submitQuestions = (e) => {
-    e.preventDefault();
-    console.log(questions);
-    console.log(JSON.stringify(questions));
-  };
   return (
     <div>
       {questions.map((question, index) => (
@@ -55,7 +52,6 @@ const Questions = () => {
       ))}
 
       <AddQuestion questions={questions} addQuestion={addQuestion} />
-      <SubmitBtn submitQuestions={submitQuestions} />
     </div>
   );
 };
