@@ -9,7 +9,7 @@ import { faker as $f } from "@/utils";
 import * as $_ from "lodash";
 import { useState } from "react";
 
-import { Heading, Questions } from "./components/";
+import { Heading, Questionnaires } from "./components/";
 
 function Main() {
   const [subcategory, setSubcategory] = useState([]);
@@ -27,7 +27,7 @@ function Main() {
             <div className="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5">
               <div className="mt-5">
                 {/* Questionnaire builder starts here */}
-                <Questions />
+                <Questionnaires />
 
                 {/* Questionnaire builder ends here */}
               </div>
