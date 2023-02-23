@@ -1,15 +1,15 @@
-const SkipableField = ({ handleChange, skipable }) => {
+const SkipableField = ({ handleChange, skipable, id }) => {
   return (
     <div className="form-check mr-4 mt-2 sm:mt-0">
       <input
-        id="shipping-service-custom"
+        id={id}
         className="form-check-input"
         type="checkbox"
         name="skipable"
         onChange={handleChange}
         checked={skipable}
       />
-      <label className="form-check-label" htmlFor="shipping-service-custom">
+      <label className="form-check-label" htmlFor={id}>
         Skipable
       </label>
     </div>
