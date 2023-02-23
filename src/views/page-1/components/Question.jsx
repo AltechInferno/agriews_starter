@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Lucide } from "@/base-components";
 
 import {
-  NameField,
+  TextField,
   TitleField,
   DescriptionField,
   TypeField,
@@ -10,6 +10,7 @@ import {
   SkipableField,
   ChoicesField,
   SkipOnField,
+  RequiredField,
 } from "./";
 
 const Question = ({ question, updateChoices, updateQuestion }) => {
@@ -23,6 +24,7 @@ const Question = ({ question, updateChoices, updateQuestion }) => {
     description,
     choices,
     skipOn,
+    required,
   } = question;
 
   const handleChange = (event) => {
@@ -51,7 +53,12 @@ const Question = ({ question, updateChoices, updateQuestion }) => {
               <Lucide icon="X" className="w-5 h-5" />
             </a>
             <div>
-              <NameField name={name} handleChange={handleChange} />
+              <TextField
+                label="Name"
+                name={name}
+                handleChange={handleChange}
+                placeholder="question 1"
+              />
               <TitleField title={title} handleChange={handleChange} />
               <DescriptionField
                 description={description}
@@ -90,12 +97,15 @@ const Question = ({ question, updateChoices, updateQuestion }) => {
                     <CanSkipNextQuestionField
                       handleChange={handleChange}
                       canSkipNextQuestion={canSkipNextQuestion}
+                      id={name + "-canskipNextQuestion"}
                     />
                     <SkipableField
                       handleChange={handleChange}
                       skipable={skipable}
+                      id={name + "-skipable"}
                     />
                   </div>
+
                   <div className="leading-relaxed text-slate-500 text-xs mt-3">
                     Choose canSkipNextQuestion for the parent and skipable for
                     the child
@@ -103,6 +113,11 @@ const Question = ({ question, updateChoices, updateQuestion }) => {
                       Docs
                     </a>
                   </div>
+                  <RequiredField
+                    handleChange={handleChange}
+                    required={required}
+                    id={name + "-required"}
+                  />
                 </div>
               </div>
               {/* <div className="xl:ml-20 xl:pl-5 xl:pr-20 mt-5 first:mt-0">
