@@ -28,6 +28,7 @@ const Questions = ({ updateQuestions, position }) => {
   const updateChoices = (index, choices) => {
     const data = [...questions];
     data[index].choices = choices;
+    setQuestions(data);
   };
   const updateQuestion = (index, event) => {
     const data = [...questions];
